@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans');
 /* You must use a DIFFERENT FONT THAT THIS ONE as your webfont */
 
 /*************************************************
@@ -15,9 +15,17 @@
 }
 html{
     font-size: 16px;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Lato', 'Slabo 27px', sans-serif;
     /* change this font stack to your own choices */
     line-height: 1.5;
+    max-width: 1500px;
+    height: 100%;
+    margin: auto;
+    background: linear-gradient(rgb(255,255,255),rgb(80,80,80)) fixed;
+}
+.container{
+    background: rgb(300,300,300);
+    border: 0.5px solid rgb(0,0,0);
 }
 p{
     
@@ -35,52 +43,91 @@ li{
     
 }
 img{
-    width: 25%;
+    width: 35%;
+    
 }
 
 /*************************************************
             HEADER
 *************************************************/
 header{
-    padding:1rem 2rem;
-    color: black;
+    background-image: url("../img/354.jpeg");
+    padding:1rem;
+    color: rgb(200, 200, 200);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    height: 50vh;
+    
+    
+    
 }
 header > h1{
-    
+    font-size: 5rem;
+    text-align: center;
 }
 header > h2{
-    
+    font-size: 2rem;
+    text-align: center;
 }
 /*************************************************
             NAVMENU
 *************************************************/
-nav{
-    padding:1rem 2rem;
+
+.mainnav{
+    padding: 0.3rem 0.3rem;
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
+    background-color: rgb(100, 100, 100);
+
 }
 nav > a,
 nav > a:visited,
 nav > a:link{
-    
+    font-variant: small-caps;
+    color: rgb(300, 300, 300);
+    text-decoration:none;
 }
 nav > a:active,
 nav > a:focus,
 nav > a:hover{
-    
+    text-shadow: 0px 0px 10px rgb(0,0,0);
+    font-size: 1.1rem;
 }
 
 /*************************************************
             MAIN CONTENT
 *************************************************/
 main{
-    padding:1rem 2rem;
+    padding: 1rem 10rem;
+    display: column;
+    
+                         
+}
+main h1, main h2{
+    padding: 0rem ;
+    border-bottom: 1px dotted rgb(0,0,0);
+    color: rgb(50, 50, 20);
+    
 }
 section{
     
 }
 section p{
+    padding: 0.5rem 0rem;
     
 }
 section p img{
+    min-width: 150px;
+    max-width: 250px;
+    min-height: 150px;
+    max-height: 100px;
+    float: right;
+    margin: 0.1rem 1rem 0rem 0rem;
+    border: 1px solid black;
     
 }
 
@@ -88,18 +135,29 @@ section p img{
             FOOTER
 *************************************************/
 footer{
-    padding:1rem 2rem;
+    padding: 0.5rem;
+    display: column;
+    background-color: rgb(150, 150, 150);
+    border-top: 1px solid rgb(0,0,0);
 }
 .foot nav{
+    display: grid;
+    grid-template-columns: 20fr;
+    grid-template-areas: "FLA FLB";
+    padding: 0rem 0rem 0rem 0rem;
+
     
+
 }
 .foot section{
-    
+
 }
 .foot dl{
     
 }
 .foot dt{
+    font-weight: bold;
+    color: rgb(50, 50, 20);
     
 }
 .foot dd{
@@ -107,22 +165,115 @@ footer{
 }
 .foot dd a,
 .foot dd a:visited{
-    
+    color: rgb(20, 20, 200);
 }
 .foot dd a:active,
 .foot dd a:focus,
 .foot dd a:hover{
-    
+    font-weight: bold;
+ 
+}
+.docs{
+    grid-area: FLA;
+}
+.channels{
+    grid-area: FLB;
+}
+.comments{
+
+}
+#name{
+    width: 30%;  
+}
+#email{
+    width: 25%;
+}
+#city{
+    width: 10%;
+}
+#comment{
+    width: 50%;
+    height: 100px;
+}
+#btnSend{
+    padding: 1px;
 }
 /*************************************************
             MEDIA QUERIES for layout
 *************************************************/
-@media (max-width: 599px){
-    
+@media (max-width: 599px) {
+
+    main h1,
+    h2 {
+        text-decoration: underline grey;
+        font-size: 2rem;
+        padding: 2rem;
+        font-weight: bold;
+    }
+
+
+    .mainnav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .main-link {
+        padding-left: 1rem;
+
+    }
+
+    footer {
+        border-top: 1rem solid grey;
+    }
+
+    .foot dt {
+        padding: 1rem;
+        font-size: 1.5rem;
+        text-decoration: underline grey;
+    }
 }
-@media (min-width: 600px) and (max-width:999px){
-    
+
+@media (min-width: 600px) and (max-width:999px) {
+
+    main h1,
+    h2 {
+        text-decoration: underline red;
+        font-size: 2rem;
+        padding: 2rem;
+        font-weight: bold;
+    }
+
+
+    footer {
+        border-top: 1rem solid red;
+    }
+
+    .foot dt {
+        padding: 1rem;
+        font-size: 1.5rem;
+        text-decoration: underline red;
+    }
 }
-@media (min-width: 1000px){
-    
-}
+
+@media (min-width: 1000px) {
+
+    main h1,
+    h2 {
+        text-decoration: underline black;
+        font-size: 2rem;
+        padding: 1rem;
+        font-weight: bolder;
+    }
+
+
+    .foot dt {
+        padding: 0rem;
+        font-size: 1.1rem;
+        text-decoration: underline black;
+    }
+
+ 
+
+
